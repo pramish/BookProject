@@ -19,10 +19,10 @@ export const BookForm = () => {
   };
   return (
     <div>
-      <h1>Add Books</h1>
+      <h1>Add ToDo</h1>
       <input
         type="text"
-        placeholder="book title"
+        placeholder="title"
         value={title}
         onChange={e => {
           setTitle(e.target.value);
@@ -30,14 +30,14 @@ export const BookForm = () => {
       />
       <input
         type="text"
-        placeholder="book author"
+        placeholder="description"
         value={author}
         onChange={e => {
           setAuthor(e.target.value);
         }}
       />
       <button className="add" onClick={addBooks} type="button">
-        Add Book
+        Add ToDo
       </button>
     </div>
   );

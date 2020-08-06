@@ -14,7 +14,7 @@ export const BookList = props => {
     </div>
   ) : (
     <div className="empty">
-      No Books to read. You can enjoy your time.......
+      No ToDos to complete. You can add other todos.......
     </div>
   );
 };
