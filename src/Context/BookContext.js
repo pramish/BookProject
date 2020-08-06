@@ -16,6 +16,10 @@ export const BookContextProvider = props => {
     }
   ];
   const [book, setBook] = useState(books);
+  // const [book, setBook] = useState([
+  //   { title: "name of the wind", author: "patrick rothfuss", id: 1 },
+  //   { title: "the final empire", author: "brandon sanderson", id: 2 }
+  // ]);
   const addBook = (title, author) => {
     setBook(...book, { title, author, id: Math.random() });
   };
