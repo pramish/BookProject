@@ -2,12 +2,17 @@ import React, { useContext, useState } from "react";
 import { BookContext } from "../Context/BookContext";
 
 export const BookForm = () => {
-  const { addBook } = useContext(BookContext);
-
+  const { dispatch } = useContext(BookContext);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const addBooks = e => {
-    addBook(title, author);
+    dispatch({
+      type: "ADD_BOOK",
+      book: {
+        title,
+        author
+      }
+    });
     console.log(title, author);
     setTitle("");
     setAuthor("");
@@ -22,7 +27,6 @@ export const BookForm = () => {
         onChange={e => {
           setTitle(e.target.value);
         }}
-        required
       />
       <input
         type="text"
@@ -31,9 +35,8 @@ export const BookForm = () => {
         onChange={e => {
           setAuthor(e.target.value);
         }}
-        required
       />
-      <button onClick={addBooks} type="button">
+      <button className="add" onClick={addBooks} type="button">
         Add Book
       </button>
     </div>
